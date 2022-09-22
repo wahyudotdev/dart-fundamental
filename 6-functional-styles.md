@@ -69,9 +69,9 @@ void greet(Function fn) => fn();
 void callback(Function(String) fn) => fn('Callback nih');
 
 void main() {
-  greet(() => print('Hello'));
+  greet(() => print('Hello')); // Hello
 
-  callback((data) => print(data));
+  callback((data) => print(data)); // Callback nih
 }
 
 
