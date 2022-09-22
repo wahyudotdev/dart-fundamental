@@ -1,4 +1,4 @@
-# Ternary, Cascade, and Spread Operator
+# Ternary, Cascade, dan Spread Operator
 
 ## Ternary (?)
 Bentuk simple dari if else. Jika kondisi true maka nilai disebelah kiri yang akan dikembalikan, begitu pula sebaliknya.
@@ -49,8 +49,8 @@ void main() {
 
 ```
 
-## Spread Operator
-Berfungsi untuk 'menyebarkan' atau menyalin nilai sebuah array didalam array lainnya
+## Spread Operator (...)
+Berfungsi untuk 'menyebarkan' atau menyalin nilai sebuah array kedalam array lainnya
 
 ```dart
 void main() {
