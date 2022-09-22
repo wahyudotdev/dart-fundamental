@@ -174,7 +174,11 @@ Seorang programmer harus memiliki skill laravel untuk menjadi backend engineer, 
 ```dart
 
 abstract class Programmer {
+    
+    bool get doyanNgopi => true;
+
     void ngoding();
+
 }
 
 // keyword 'on' membatasi mixin agar hanya dapat dipakai
