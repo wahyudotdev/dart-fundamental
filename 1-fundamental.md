@@ -121,8 +121,8 @@ void main(){
     helloMom(); // Hello mom
     sebutNamakuTuan('crocodic'); // hello crocodic
     whatYearIsIt(); // 2022
-    final doa = sebutNamaDoiDalamDoa('maudy ayunda');
-    print(doa); // jika maudy ayunda jodohku maka dekatkanlah
+    final doa = sebutNamaDoiDalamDoa('wulan');
+    print(doa); // jika wulan jodohku maka dekatkanlah
 
     final ab = hasilKali(a: 10, b: 100);
     print(ab); // 1000
