@@ -49,7 +49,7 @@ void main() {
 
 ```
 
-### Spread Operator
+## Spread Operator
 Berfungsi untuk 'menyebarkan' atau menyalin nilai sebuah array didalam array lainnya
 
 ```dart
