@@ -27,6 +27,18 @@ class Animal {
 
 }
 
+// Dari ini
+/*
+void main() {
+  var cat = Animal()
+  cat.setName = 'Kucing Ori'
+  cat.setLifeSpan = 12;
+  print(cat.name); // Kucing Ori
+  print(cat.lifeSpan); // 12
+}
+*/
+
+// Mnejadi seperti dibawah
 void main() {
   var cat = Animal()
                 ..setName = 'Kucing Ori'
