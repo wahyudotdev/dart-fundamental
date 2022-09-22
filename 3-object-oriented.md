@@ -51,28 +51,70 @@ void main() {
 
 
 ## Abstract Class
+Semua class di dart sebenarnya dapat digunakan sebagai parent class untuk class lainnya. 
+```dart
+class Animal {
+    void move() {
+        print('walking');
+    }
+}
+
+// print('walking')
+class Cat extends Animal {}
+
+// print('duck walking')
+class Duck implements Animal {
+    @override
+    void move() {
+        print('duck walking');
+    }
+}
+```
+
+
+Namun terkadang kita hanya membutuhkan blueprintnya saja tanpa menuliskan implementasinya, maka dari itu ada yang dinamakan abstract class untuk secara eksplisit menyebutkan bahwa class tersebut dapat hanya merupakan blueprint, dan child class harus menerapkan implementasi dari class tersebut
 ```dart
 
 abstract class Animal {
   void move(){
     print('walking');
   }
+
+  void eat();
 }
 
-class Cat extends Animal {}
 
+// method void eat() wajib diimplementasikan karena
+// tidak ada implementasi defaultnya di abstract class 'Animal'
+class Cat extends Animal {
+
+    @override
+    void eat() {
+        print('cat eats');
+    }
+
+}
+
+// Method move akan di 'override' (ditimpa) oleh
+// implementasi baru dari class 'Duck'
 class Duck extends Animal {
 
     @override
     void move() {
         print('duck walking');
     }
+
+    @override
+    void eat() {
+        print('duck eats');
+    }
 }
 
 
 // Jika menggunakan 'implements' maka wajib untuk
-// membuat implementasi di child class, meskipun di parent 
-// abstract class sudah ada implementasinya
+// membuat implementasi semua member parent class 
+// di child class, meskipun method void move()
+// di abstract class 'Animal' sudah ada implementasinya
 class Bird implements Animal {
 
     @override
@@ -80,6 +122,10 @@ class Bird implements Animal {
         print('bird flying');
     }
 
+    @override
+    void eat() {
+        print('bird eats');
+    }
 }
 
 void main() {
@@ -91,7 +137,33 @@ void main() {
 }
 ```
 
+dapat juga menggunakan extends dan implements secara bersamaan
+```dart
+abstract class Animal {
+    void move();
+}
+
+abstract class Bird {
+    void fly();
+}
+
+class Kenari extends Animal implements Bird {
+
+    @override
+    void move() {
+        print('kenari move');
+    }
+
+    @override
+    void fly(){
+        print('kenari fly');
+    }
+}
+
+```
 ## Mixin
+### Untuk Apa?
+Untuk menggunakan blueprint method dan property tanpa extends dari parent class, juga berguna untuk penerapan prinsip 'composition over inheritance'. Lho kenapa tidak memakai implements? Keunikannya kita bisa menggunakan lebih dari 1 mixin.
 ### Contoh kasus :
 Seorang programmer harus memiliki skill laravel untuk menjadi backend engineer, sedangkan untuk menjadi frontend dev harus memiliki skill react. Kita anggap 'mixin' ini adalah skill yang wajib dimiliki programmer agar dapat diterima kerja sebagai backend/frontend engineer
 - Parent class : Programmer
@@ -103,24 +175,27 @@ abstract class Programmer {
     void ngoding();
 }
 
-mixin Laravel {
+// keyword 'on' membatasi mixin agar hanya dapat dipakai
+// oleh class yang mewarisi kelas 'Programmer'
+mixin Laravel on Programmer {
     void buildRestApi();
 }
 
-mixin React {
+mixin React on Programmer {
     void buildUI();
 }
 
-// Dapat diterima kerja jika memiliki skill React
+// Instance dapat diberikan sebagai parameter jika memiliki mixin React
 void seleksiFrontend(React dev) {
     dev.buildUI();
 }
 
-// Dapat diterima kerja jika memiliki skill Laravel
+// Instance dapat diberikan sebagai parameter jika memiliki mixin Laravel
 void seleksiBackend(Laravel dev) {
     dev.buildRestApi();
 }
 
+// Mixin digunakan menggunakan keyword 'with'
 class Backend extends Programmer with Laravel {
     
     @override
@@ -147,6 +222,8 @@ class Frontend extends Programmer with React {
     }
 }
 
+// Jika menggunakan mixin lebih dari 1 dapat dipisahkan
+// dengan tanda koma (,)
 class Fullstack extends Programmer with Laravel, React {
     @override
     void ngoding() {
