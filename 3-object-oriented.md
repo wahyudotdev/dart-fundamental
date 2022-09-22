@@ -34,6 +34,21 @@ void main() {
 }
 ```
 
+## Getter dan Setter
+```dart
+class Animal {
+    String _name = '';
+    set setName(String name) => _name = name;
+    String get name => _name;
+}
+
+void main() {
+    var animal = Animal();
+    animal.setName = 'Kucing';
+    print(animal.name); // Kucing
+}
+```
+
 
 ## Abstract Class
 ```dart
