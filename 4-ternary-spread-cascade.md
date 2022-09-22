@@ -16,14 +16,14 @@ Di bahasa pemrograman lain mungkin kita biasanya mengembalikan 'this' untuk memb
 
 class Animal {
   
-  String? _name;
-  int? _lifeSpan;
+  String _name = '';
+  int _lifeSpan = 0;
 
   set setName(String n) => _name = n;  
   set setLifeSpan(int lifeSpan) => _lifeSpan = lifeSpan;
   
-  String? get name => _name;
-  int? get lifeSpan => _lifeSpan;
+  String get name => _name;
+  int get lifeSpan => _lifeSpan;
 
 }
 
