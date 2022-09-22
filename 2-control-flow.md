@@ -1,12 +1,5 @@
 # Control Flow
 
-## Covered topics :
-- If else
-- For loop
-- While & do while
-- Break & continue
-- Switch case
-
 ## If Else
 
 ```dart

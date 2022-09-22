@@ -1,17 +1,11 @@
 # Fundamental
-## Covered topics are :
-- Data type
-- Type inference
-- Collection
-- Operators
-- Function
+
 ## Data Type
 
 - Number (num, int, double)
 - Boolean
 - String
 
-### Example :
 
 ```dart
 int counter = 0; // number
@@ -27,7 +21,6 @@ bool isActive = false; // Boolean
 - final (assign once at runtime)
 - const (assign once at compile time)
 
-### Example :
 ```dart
 int a = 1000;
 var b = 1000;
@@ -46,7 +39,6 @@ print(d.runtimeType); // int
 - Sets : array of data, but can't have same value
 - Map : key value pair
 
-### Example :
 ```dart
 
 List<String> names = ['crocodic','studio'];
