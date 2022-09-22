@@ -3,12 +3,14 @@
 ## If Else
 
 ```dart
-bool someConditional = true;
+int role = 1;
 
-if(someConditional) {
-    // Do something if true
+if(role == 1) {
+    print('admin');
+} else if (role == 2) {
+    print('user');
 } else {
-    // do something if false
+    print('unknown');
 }
 
 ```
@@ -31,7 +33,7 @@ while (i <= 100) {
 }
 ```
 
-### Do while
+## Do while
 ```dart
 do {
   print(i);
@@ -40,7 +42,7 @@ do {
 ```
 
 
-### Break
+## Break
 ```dart
 
 for(var i = 0; i <= 5; i++){
@@ -57,7 +59,7 @@ for(var i = 0; i <= 5; i++){
 // finish
 ```
 
-### Continue
+## Continue
 ```dart
 for(var i = 0; i <= 5; i++){
     if(i == 4){
@@ -74,7 +76,7 @@ for(var i = 0; i <= 5; i++){
 // 5
 ```
 
-### Switch Case
+## Switch Case
 ```dart
 
 int role = 1;
