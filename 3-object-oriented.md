@@ -80,6 +80,8 @@ abstract class Animal {
     print('walking');
   }
 
+  // method ini hanya merupakan blueprint
+  // tanpa implementasi
   void eat();
 }
 
