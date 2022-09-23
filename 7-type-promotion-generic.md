@@ -80,3 +80,34 @@ void main() {
 }
 
 ```
+
+Generic juga dapat digunakan sebagai return type. Pada contoh dibawah ini kita akan passing object sebagai parameter, lalu object tersebut akan langsung dikembalikan sebagai return value
+```dart
+abstract class Animal {
+  void walking();
+}
+
+class Bird extends Animal {
+  @override
+  void walking() {
+    print('bird walking');
+  }
+}
+
+class Human {
+  void talking() {}
+}
+
+T classWrapper<T>(T data) {
+  return data;
+}
+
+void main() {
+  var bird = classWrapper(Bird());
+  var human = classWrapper(Human());
+
+  print(bird); // Instance of 'Bird'
+  print(human); // Instance of 'Human'
+}
+
+```
