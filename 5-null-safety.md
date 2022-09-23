@@ -82,3 +82,21 @@ print(number); // [1,2]
 
 
 ```
+
+## Null Assertion
+Jika Anda yakin bahwa nilai nullable yang diproses tidak akan bernilai null, maka Anda dapat menggunakan operator null assertion (!). **Berhati-hatilah saat menggunakan null assertion**
+
+```dart
+
+void main() {
+    String? name;
+    String? throwError;
+    
+    name = 'crocodic';
+
+
+    print(name!.length); // 7
+    print(throwError!.length); // Unhandled exception : Null check operator used on a null value
+}
+
+```
